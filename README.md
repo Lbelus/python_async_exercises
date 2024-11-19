@@ -2,22 +2,32 @@
 
 Event loops are the backbone of asynchronous programming, and Python provides tools like `asyncio` to work with them. Let’s build the concept organically with exercises.
 
+
+Ressources: 
+- https://medium.com/@pekelny/fake-event-loop-python3-7498761af5e0
+- https://docs.python.org/3/library/asyncio-task.html
+
 ---
 
-### **Exercise 1: Understand Blocking vs. Non-Blocking Code**
+### **Quest 1: Understand Blocking vs. Non-Blocking Code**
 Write a simple program where two tasks are executed sequentially (blocking) and then rewrite it to simulate non-blocking behavior.
 
 1. **Sequential (Blocking)**:
    - Task 1: Sleep for 3 seconds and print a message.
    - Task 2: Sleep for 2 seconds and print a message.
 
-2. **Non-Blocking Simulation**:
+2. Do it again with asyncio and async task
+
+3. **Non-Blocking Simulation**:
    - Print "Task 1 started", then after 3 seconds, print "Task 1 finished".
    - Simultaneously, start "Task 2" and finish it in 2 seconds.
 
+4. Do it again without asyncio
+
+
 ---
 
-### **Exercise 2: Building a Simple Timer with Callbacks**
+### **Quest 2: Building a Simple Timer with Callbacks**
 Implement a timer function that takes a delay and a callback. The callback is called after the delay.
 
 1. Write a `timer` function:
@@ -40,7 +50,7 @@ Implement a timer function that takes a delay and a callback. The callback is ca
 
 ---
 
-### **Exercise 3: Introduce the Event Queue**
+### **Quest 3: Introduce the Event Queue**
 Simulate an event loop by creating a queue where you push tasks (functions) to be executed later.
 
 1. Create a queue and an executor:
@@ -65,7 +75,7 @@ Simulate an event loop by creating a queue where you push tasks (functions) to b
 
 ---
 
-### **Exercise 4: Asynchronous Event Loop with Sleep**
+### **Quest 4: Asynchronous Event Loop with Sleep**
 Improve the event loop to handle tasks with delays using `time.sleep()`.
 
 1. Modify tasks to include delays:
@@ -90,7 +100,7 @@ Improve the event loop to handle tasks with delays using `time.sleep()`.
 
 ---
 
-### **Exercise 5: Asynchronous Tasks with `asyncio`**
+### **Quest 5: Asynchronous Tasks with `asyncio`**
 Introduce Python’s `asyncio` library to handle concurrency more effectively.
 
 1. Write two asynchronous tasks:
@@ -113,7 +123,7 @@ Introduce Python’s `asyncio` library to handle concurrency more effectively.
 
 ---
 
-### **Exercise 6: Build a Custom Event Loop Using `asyncio`**
+### **Quest 6: Build a Custom Event Loop Using `asyncio`**
 Write your own event loop using `asyncio` primitives.
 
 1. Create a task scheduler:
@@ -130,7 +140,7 @@ Write your own event loop using `asyncio` primitives.
 
 ---
 
-### **Exercise 7: Advanced: Scheduling Periodic Tasks**
+### **Quest 7: Advanced: Scheduling Periodic Tasks**
 Extend the custom event loop to allow periodic tasks (e.g., every 2 seconds).
 
 1. Implement periodic tasks:
@@ -149,7 +159,7 @@ Extend the custom event loop to allow periodic tasks (e.g., every 2 seconds).
 
 ---
 
-### **Exercise 8: Implement a Producer-Consumer Model**
+### **Quest 8: Implement a Producer-Consumer Model**
 Simulate producer and consumer tasks sharing a queue.
 
 1. Define producer and consumer:
@@ -176,12 +186,12 @@ Simulate producer and consumer tasks sharing a queue.
 
 ---
 
-### **Exercise 9: Debugging Event Loops**
+### **Quest 9: Debugging Event Loops**
 Introduce intentional delays or errors in tasks and observe how they affect the loop. Add logging to track execution order.
 
 ---
 
-### **Exercise 10: Apply in a Real-World Example**
+### **Quest 10: Apply in a Real-World Example**
 Build a small application that:
 - Reads data from a file (producer).
 - Processes the data asynchronously (processor).
