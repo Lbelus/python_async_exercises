@@ -32,12 +32,7 @@ Implement a timer function that takes a delay and a callback. The callback is ca
 
 1. Write a `timer` function:
    ```python
-   import time
-
    def timer(delay, callback):
-       print(f"Timer started for {delay} seconds.")
-       time.sleep(delay)
-       callback()
    ```
 
 2. Test it with:
@@ -55,12 +50,7 @@ Simulate an event loop by creating a queue where you push tasks (functions) to b
 
 1. Create a queue and an executor:
    ```python
-   from queue import Queue
-
    def event_loop(queue):
-       while not queue.empty():
-           task = queue.get()
-           task()
    ```
 
 2. Add tasks to the queue:
@@ -81,12 +71,7 @@ Improve the event loop to handle tasks with delays using `time.sleep()`.
 1. Modify tasks to include delays:
    ```python
    import time
-
    def delayed_task(delay, message):
-       def task():
-           time.sleep(delay)
-           print(message)
-       return task
    ```
 
 2. Use the updated `event_loop`:
@@ -108,12 +93,10 @@ Introduce Python’s `asyncio` library to handle concurrency more effectively.
    import asyncio
 
    async def task_1():
-       await asyncio.sleep(3)
-       print("Task 1 completed")
+
 
    async def task_2():
-       await asyncio.sleep(2)
-       print("Task 2 completed")
+
    ```
 
 2. Run tasks concurrently:
@@ -129,7 +112,6 @@ Write your own event loop using `asyncio` primitives.
 1. Create a task scheduler:
    ```python
    async def custom_event_loop(tasks):
-       await asyncio.gather(*tasks)
    ```
 
 2. Test with multiple asynchronous functions:
@@ -146,10 +128,6 @@ Extend the custom event loop to allow periodic tasks (e.g., every 2 seconds).
 1. Implement periodic tasks:
    ```python
    async def periodic_task(interval, name, stop_after):
-       start = asyncio.get_event_loop().time()
-       while asyncio.get_event_loop().time() - start < stop_after:
-           print(f"{name} executed")
-           await asyncio.sleep(interval)
    ```
 
 2. Run with custom event loop:
@@ -165,17 +143,9 @@ Simulate producer and consumer tasks sharing a queue.
 1. Define producer and consumer:
    ```python
    async def producer(queue):
-       for i in range(5):
-           await asyncio.sleep(1)
-           print(f"Produced {i}")
-           await queue.put(i)
 
    async def consumer(queue):
-       while True:
-           item = await queue.get()
-           print(f"Consumed {item}")
-           if item is None:
-               break
+
    ```
 
 2. Combine in an event loop:
