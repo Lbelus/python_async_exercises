@@ -6,6 +6,9 @@ Event loops are the backbone of asynchronous programming, and Python provides to
 Ressources: 
 - https://medium.com/@pekelny/fake-event-loop-python3-7498761af5e0
 - https://docs.python.org/3/library/asyncio-task.html
+- https://techtalk.digitalpress.blog/build-your-own-event-loop-in-python/
+- https://medium.com/dev-bits/a-minimalistic-guide-for-understanding-asyncio-in-python-52c436c244ea
+
 
 ---
 

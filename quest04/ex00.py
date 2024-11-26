@@ -1,18 +1,16 @@
 import asyncio
-from time import sleep
 
-async def task(msg, delay):
-    print(msg + " is starting")
-    await asyncio.sleep(delay)
-    print(msg + " has ended")
-    return msg
+async def task_1():
+    await asyncio.sleep(3)
+    print("Task 1 completed")
 
-
-async def get_tasks(inputs):
-    cors = [asyncio.create_task(task(msg, delay)) for msg, delay in inputs]
-    results = asyncio.gather(*cors)
-    print(await results)
-
-asyncio.run(get_tasks([("task1", 3), ("task2", 1)]))
+async def task_2():
+    await asyncio.sleep(2)
+    print("Task 2 completed")
 
 
+async def main():
+    await asyncio.gather(task_1(), task_2())
+
+# Run the event loop
+asyncio.run(main())
