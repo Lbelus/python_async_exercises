@@ -127,7 +127,11 @@ Write your own event loop using `asyncio` primitives.
 
 ### **Quest 7: Advanced: Scheduling Periodic Tasks**
 Extend the custom event loop to allow periodic tasks (e.g., every 2 seconds).
+ex00:
+1. implement an event loop with a timeout 
 
+
+ex01: 
 1. Implement periodic tasks:
    ```python
    async def periodic_task(interval, name, stop_after):
